@@ -68,7 +68,11 @@ def switch_mode(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     # Switch between 'deepseek-chat' and 'deepseek-coder'
     current_mode = 'deepseek-coder' if current_mode == 'deepseek-chat' else 'deepseek-chat'
-    context.bot.send_message(chat_id=chat_id, text=f"Switched to {current_mode} mode.")
+    context.bot.send_message(
+        chat_id=chat_id,
+        text=f"🇬🇧 Switched to {current_mode} mode.\n\n🇷🇺 Переключен в {current_mode} режим.",
+        parse_mode='Markdown'
+    )
 
 # Add the mode command handler
 mode_handler = CommandHandler('mode', switch_mode)
