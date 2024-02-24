@@ -48,7 +48,7 @@ The `data` dictionary is used to configure the request payload sent to the DeepS
 - `'model'`: The model to use for the chat completion. Replace with the actual model name if different.
 - `'messages'`: The conversation history for the current chat. It includes the messages from the dialog context for the current chat ID.
 - `'frequency_penalty'`: A value between 0.0 and 1.0 that adjusts the likelihood of the model to repeat the same line of text. Adjust as needed.
-- `'max_tokens'`: The maximum number of tokens (words or subwords) in the generated text. Adjust as needed.
+- `'max_tokens'`: The maximum number of tokens (words or subwords) in the generated text. Adjust as needed. (The default in the code is 1000).
 - `'presence_penalty'`: A value between 0.0 and 1.0 that adjusts the likelihood of the model to include new topics in the conversation. Adjust as needed.
 - `'stop'`: A list of strings that the model will stop generating text after it encounters any of these strings. Adjust as needed.
 - `'temperature'`: A value between 0.0 and 1.0 that controls the randomness of the model's output. Higher values will result in more random completions. Adjust as needed.
