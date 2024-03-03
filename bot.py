@@ -112,7 +112,7 @@ def handle_message(update: Update, context: CallbackContext):
         'max_tokens': 1000,  # Adjust as needed
         'presence_penalty': 0.5,  # Adjust as needed
         'stop': None,  # Adjust as needed
-        'temperature': 0.8,  # Adjust as needed
+        'temperature': 0.5,  # Adjust as needed
         'top_p': 1.0  # Adjust as needed
     }
 
