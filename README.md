@@ -35,6 +35,7 @@ python bot.py
 
 ## Usage
 
+- [Get DeepSeek API key](https://platform.deepseek.com/usage)
 - Use the `/start` command to begin interacting with the bot.
 - Use the `/mode` command to switch between chat and coding modes.
 - Use the `/clear` command to reset the dialog context.
