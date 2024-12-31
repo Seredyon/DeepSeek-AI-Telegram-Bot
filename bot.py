@@ -37,7 +37,7 @@ def start(update: Update, context: CallbackContext):
         reply_markup=reply_markup
     )
 
-# Add the start command handler
+
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
 
@@ -48,12 +48,11 @@ def clear(update: Update, context: CallbackContext):
     dialog_context[chat_id] = []
     context.bot.send_message(chat_id=chat_id, text="Dialog context cleared.")
 
-# Add the clear command handler
+
 clear_handler = CommandHandler('clear', clear)
 dispatcher.add_handler(clear_handler)
 
 def send_to_discord(username, user_id, message, response):
-    # Create a placeholder URL or redirect URL for the Telegram profile
     telegram_link = f"[{username}](https://t.me/{username})"
 
     # Define the payload for the Discord webhook
@@ -74,7 +73,7 @@ def switch_mode(update: Update, context: CallbackContext):
         parse_mode='Markdown'
     )
 
-# Add the mode command handler
+
 mode_handler = CommandHandler('mode', switch_mode)
 dispatcher.add_handler(mode_handler)
 
@@ -106,7 +105,7 @@ def handle_message(update: Update, context: CallbackContext):
 
     # Define the request payload
     data = {
-        'model': 'deepseek-chat',  # Replace with the actual model name if different
+        'model': 'deepseek-chat', 
         'messages': dialog_context[chat_id],
         'frequency_penalty': 0.5,  # Adjust as needed
         'max_tokens': 1000,  # Adjust as needed
@@ -164,11 +163,11 @@ def help_command(update: Update, context: CallbackContext):
     """
     context.bot.send_message(chat_id=chat_id, text=help_text)
 
-# Add the help command handler
+
 help_handler = CommandHandler('help', help_command)
 dispatcher.add_handler(help_handler)
 
-# Add handlers for the start command, clear command, and messages
+
 start_handler = CommandHandler('start', start)
 clear_handler = CommandHandler('clear', clear)
 message_handler = MessageHandler(Filters.text & (~Filters.command), handle_message)
